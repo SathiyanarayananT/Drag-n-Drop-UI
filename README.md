@@ -7,6 +7,10 @@ Below needs to be installed
 1. Maven
 2. TestNG
 
+Below Browser drivers are kept in the Browser folder.
+chromedriver
+firefoxdriver
+
 Steps to install and test
 1. Clone the project in eclipse.
 2. Browser preference, URL is set in Property file in the Data folder.
