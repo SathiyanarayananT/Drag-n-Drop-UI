@@ -8,7 +8,7 @@ Below needs to be installed
 2. TestNG
 
 Below Browser drivers are kept in the Browser folder.
-chromedriver and firefoxdriver
+chromedriver and firefoxdriver.
 
 Steps to install and test
 1. Clone the project in eclipse.
