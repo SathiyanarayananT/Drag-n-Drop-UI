@@ -13,7 +13,7 @@ public class NewTest {
 	
 	
   @Test
-  public void DragDropTest() throws InterruptedException {
+  public void DragDropTest() {
 	  
 	  DragDropUI ddtest = new DragDropUI();
 	  ddtest.DragDropTest();

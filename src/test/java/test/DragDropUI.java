@@ -9,7 +9,7 @@ import utilities.Init;
 
 
 public class DragDropUI {
-	public void DragDropTest() throws InterruptedException {
+	public void DragDropTest() {
 		WebDriver driver = Init.getDriver();
 		
 		// click on Create an app button
