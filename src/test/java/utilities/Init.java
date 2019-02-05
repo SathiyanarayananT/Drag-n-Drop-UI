@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Init {
 
@@ -19,7 +20,7 @@ public class Init {
 
 		} else if (ReadProperty.readDetails("DRIVER").equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver", "BrowserDriver\\geckodriver.exe");
-			driver = new ChromeDriver();
+			driver = new FirefoxDriver();
 		}
 
 		driver.manage().window().maximize();

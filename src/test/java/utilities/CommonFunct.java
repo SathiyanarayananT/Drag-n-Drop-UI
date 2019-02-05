@@ -9,20 +9,21 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class CommonFunct {
 	public static WebDriver driver;
+
 	public static void WaitforElementviaXpath(String Xpath) {
 		driver = Init.getDriver();
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Xpath)));
 	}
-	
-	public static void DragDropBy(WebElement source , int X , int Y) {
+
+	public static void DragDropBy(WebElement source, int X, int Y) {
 		driver = Init.getDriver();
 		Actions act = new Actions(driver);
-		act.dragAndDropBy(source, X,Y);
+		act.dragAndDropBy(source, X, Y);
 		act.build().perform();
 	}
-	
-	public static void DragDrop(WebElement source , WebElement target) {
+
+	public static void DragDrop(WebElement source, WebElement target) {
 		driver = Init.getDriver();
 		Actions act = new Actions(driver);
 		act.dragAndDrop(source, target);
