@@ -11,9 +11,15 @@ public class CommonFunct {
 	public static WebDriver driver;
 
 	public static void WaitforElementviaXpath(String Xpath) {
+		try {
 		driver = Init.getDriver();
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath(Xpath)));
+		Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public static void DragDropBy(WebElement source, int X, int Y) {
