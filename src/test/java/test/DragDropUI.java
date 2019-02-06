@@ -75,6 +75,9 @@ public class DragDropUI {
 		
 		driver.findElement(By.xpath("//div[contains(text(),'SMTP Host:')]/following::input[@type='text']"))
 				.sendKeys("smtp.gmail.com");
+		// wait
+		CommonFunct.WaitforElementviaXpath("//div[contains(text(),'Port')]/following::input[@type='text']");
+		
 		driver.findElement(By.xpath("//div[contains(text(),'Port')]/following::input[@type='text']")).sendKeys("456");
 		driver.findElement(By.xpath("//div[contains(text(),'Username')]/following::input[@type='text']"))
 				.sendKeys("username");
