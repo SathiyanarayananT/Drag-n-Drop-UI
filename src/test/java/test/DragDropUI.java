@@ -38,10 +38,15 @@ public class DragDropUI {
 		pagearea_id = pagearea_id.split("#")[1];
 
 		// Click on messaging
+		//wait
 		CommonFunct.WaitforElementviaXpath("//a[contains(text(),'Messaging')]");
+		
 		driver.findElement(By.xpath("//a[contains(text(),'Messaging')]")).click();
 
 		// Draging the element to the page area
+		//wait
+		CommonFunct.WaitforElementviaXpath("//li[text()='Send an SMS']");
+		
 		WebElement sendsmsblock = driver.findElement(By.xpath("//li[text()='Send an SMS']"));
 		WebElement pagearea = driver.findElement(By.id(pagearea_id));
 		CommonFunct.DragDropBy(sendsmsblock, pagearea.getLocation().getX() * 4, pagearea.getLocation().getY());
@@ -50,7 +55,6 @@ public class DragDropUI {
 		// div[@id= 'module-2']/div[@class='mod-rail mod-north']/div
 		// This xpath also works,but to be very precise about the block, below xpath is
 		// used.
-
 		WebElement startpointer = driver.findElement(
 				By.xpath("//div[@id= 'module-1' and .//div[text()='Start']]/div[@class='mod-rail mod-south']/div"));
 		WebElement sendsmsblockpointer = driver.findElement(By
@@ -58,20 +62,26 @@ public class DragDropUI {
 		CommonFunct.DragDrop(startpointer, sendsmsblockpointer);
 
 		// enter values in Send an SMS block
+		CommonFunct.WaitforElementviaXpath("//textarea[@name='phone_constant']");
+		
 		driver.findElement(By.name("phone_constant")).sendKeys("901982309218");
 		driver.findElement(By.name("message_phrase[]")).sendKeys("Hello world");
-
+		
+		// Drag and drop send email to page area
 		WebElement sendanemail = driver.findElement(By.xpath("//li[text()='Send an Email']"));
 		CommonFunct.DragDropBy(sendanemail, pagearea.getLocation().getX() * 6, pagearea.getLocation().getY() * 2);
 
 		// enter values in Send an SMS block
+		//wait
+		CommonFunct.WaitforElementviaXpath("//div[contains(text(),'SMTP Host:')]/following::input[@type='text']");
+		
 		driver.findElement(By.xpath("//div[contains(text(),'SMTP Host:')]/following::input[@type='text']"))
 				.sendKeys("smtp.gmail.com");
 		driver.findElement(By.xpath("//div[contains(text(),'Port')]/following::input[@type='text']")).sendKeys("456");
 		driver.findElement(By.xpath("//div[contains(text(),'Username')]/following::input[@type='text']"))
 				.sendKeys("username");
 
-		// This can also be used for Password
+		// Below can also be used for Password
 		// div[contains(text(),'Password')]/following::input[@*='text']
 		// search via name is faster
 		driver.findElement(By.name("password")).sendKeys("password");
@@ -90,6 +100,8 @@ public class DragDropUI {
 		CommonFunct.DragDrop(sendsmsblockpointer1, sendanemailpointer1);
 
 		// Click on Basic
+		CommonFunct.WaitforElementviaXpath("//a[contains(text(),'Basic')]");
+		
 		driver.findElement(By.xpath("//a[contains(text(),'Basic')]")).click();
 
 		// Drop and drop end app
