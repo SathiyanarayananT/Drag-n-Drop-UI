@@ -103,6 +103,8 @@ public class DragDropUI {
 		driver.findElement(By.xpath("//a[contains(text(),'Basic')]")).click();
 
 		// Drop and drop end app
+		// wait
+		CommonFunct.WaitforElementviaXpath("//li[text()='Hang Up or Exit']");
 		WebElement endblock = driver.findElement(By.xpath("//li[text()='Hang Up or Exit']"));
 		CommonFunct.DragDropBy(endblock, pagearea.getLocation().getX() * 2, pagearea.getLocation().getY() * 5);
 
@@ -114,6 +116,7 @@ public class DragDropUI {
 		CommonFunct.DragDrop(sendsmsblockpointer2, endblockpointer1);
 
 		// Drop and drop end app
+		CommonFunct.WaitforElementviaXpath("//li[text()='Hang Up or Exit']");
 		CommonFunct.DragDropBy(endblock, pagearea.getLocation().getX() * 4, pagearea.getLocation().getY() * 7);
 
 		WebElement sendemailblockpointer2 = driver.findElement(By.xpath(
