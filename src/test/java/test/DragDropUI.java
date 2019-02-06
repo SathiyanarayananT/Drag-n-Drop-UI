@@ -29,11 +29,9 @@ public class DragDropUI {
 		// Click create
 		driver.findElement(By.xpath("//div[@id='create-dialog']/following-sibling::div/button[text()='Create']"))
 				.click();
-
-		// To double check that we are in correct page
+		
+		// Getting tab id using href attribute
 		WebElement current_page = driver.findElement(By.xpath("//li[@aria-disabled='true']/a[1]"));
-
-		// Getting link name
 		String pagearea_id = current_page.getAttribute("href");
 		pagearea_id = pagearea_id.split("#")[1];
 
@@ -108,7 +106,7 @@ public class DragDropUI {
 		WebElement endblock = driver.findElement(By.xpath("//li[text()='Hang Up or Exit']"));
 		CommonFunct.DragDropBy(endblock, pagearea.getLocation().getX() * 2, pagearea.getLocation().getY() * 5);
 
-		// Join End app and Send an SMS block
+		// Connect Send an SMS block with End app
 		WebElement sendsmsblockpointer2 = driver.findElement(By.xpath(
 				"//div[@id= 'module-2' and .//div[text()='Send an SMS']]//div[@class='panel-nodes-attached inner']/div[1]"));
 		WebElement endblockpointer1 = driver.findElement(
@@ -123,9 +121,11 @@ public class DragDropUI {
 		WebElement endblockpointer2 = driver.findElement(
 				By.xpath("//div[@id= 'module-5' and .//div[text()='Exit App']]/div[@class='mod-rail mod-north']/div"));
 		CommonFunct.DragDrop(sendemailblockpointer2, endblockpointer2);
-
+		
+		// Drop and drop end app
 		CommonFunct.DragDropBy(endblock, pagearea.getLocation().getX() * 8, pagearea.getLocation().getY() * 7);
 
+		// Connect sendemailblock with end app
 		WebElement sendemailblockpointer3 = driver.findElement(By.xpath(
 				"//div[@id= 'module-3' and .//div[text()='Send an Email']]//div[@class='panel-nodes-attached inner']/div[2]"));
 		WebElement endblockpointer3 = driver.findElement(
